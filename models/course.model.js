@@ -73,11 +73,6 @@ const courseSchema = new mongoose.Schema({
     toObject:{virtuals:true}
 });
 
-// Virtual field for average rating (to be implemented with reviews)
-courseSchema.virtual('averageRating').get(function(){
-    return 0; // Placeholder until review system is implemented
-});
-
 // Update total lectures count when lectures are modified
 courseSchema.pre('save', function(next){
     if(this.lectures){
